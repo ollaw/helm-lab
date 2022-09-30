@@ -1,0 +1,81 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: devops-champions-k8s-$TEAM
+spec: {}
+---
+
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: qainit-developers-namespace-access
+  namespace: devops-champions-k8s-$TEAM
+rules:
+  - apiGroups:
+      - ""
+      - apps
+    resources:
+      - '*'
+    verbs:
+      - '*'
+
+---
+
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: qainit-developers-namespace-access-role-binding
+  namespace: devops-champions-k8s-$TEAM
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: qainit-developers-namespace-access
+subjects:
+  - apiGroup: rbac.authorization.k8s.io
+    kind: User
+    name: developers
+  - apiGroup: rbac.authorization.k8s.io
+    kind: User
+    name: developers-intermediari
+  - apiGroup: rbac.authorization.k8s.io
+    kind: User
+    name: developers-sinistri
+  - apiGroup: rbac.authorization.k8s.io
+    kind: User
+    name: global-tech-lead
+  - apiGroup: rbac.authorization.k8s.io
+    kind: User
+    name: global-security-engineer
+  - kind: User
+    name: devops-champion-app
+    apiGroup: rbac.authorization.k8s.io
+  - kind: User
+    name: devops-champion-backoffice
+    apiGroup: rbac.authorization.k8s.io
+  - kind: User
+    name: devops-champion-engine
+    apiGroup: rbac.authorization.k8s.io
+  - kind: User
+    name: devops-champion-home
+    apiGroup: rbac.authorization.k8s.io
+  - kind: User
+    name: devops-champion-intermediari
+    apiGroup: rbac.authorization.k8s.io
+  - kind: User
+    name: devops-champion-motor
+    apiGroup: rbac.authorization.k8s.io
+  - kind: User
+    name: devops-champion-website
+    apiGroup: rbac.authorization.k8s.io
+  - kind: User
+    name: devops-champion-finance
+    apiGroup: rbac.authorization.k8s.io
+  - kind: User
+    name: devops-champion-sharedsvcs
+    apiGroup: rbac.authorization.k8s.io
+  - kind: User
+    name: devops-champion-bootstrap
+    apiGroup: rbac.authorization.k8s.io
+  - kind: User
+    name: devops-champion-sinistri
+    apiGroup: rbac.authorization.k8s.io

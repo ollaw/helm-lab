@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+  Web Library
+{% endblock %}
+
+{% block body %}
+
+  <form action="/save_registration" method="POST">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xs-12 p-1">
+          <input type="username" name="username_reg_p" placeholder="Choose a Username">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xs-12 p-1">
+          <input type="password" name="password_reg_p" placeholder="Choose a Password">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xs-12 p-1">
+          <input type="submit" value="Sign up">
+        </div>
+      </div>
+    </div>
+  </form>
+
+{% endblock %}

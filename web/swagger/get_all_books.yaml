@@ -1,0 +1,13 @@
+---
+tags:
+- Books APIs
+description: Get list of all books in your library
+produces:
+- application/json
+responses:
+  '200':
+    description: OK
+  '404':
+    description: Resource not found
+  '500':
+    description: Server error

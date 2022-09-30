@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+  {% include 'header.html' %}
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+      {% for isbn, book in books.items()|sort %}
+        <div class="row">
+          <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xs-12">
+            <a href="{{ url_for('search_single_book', book_isbn=isbn) }}">({{ isbn }}) {{ book.title }} written by {{ book.author }} in {{ book.year }}</a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+  Web Library
+{% endblock %}
+
+{% block body %}
+
+  <form action="/login" method="POST">
+    <div class="container">
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div class="row">
+          <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xs-12 p-3">
+              {% for message in messages %}
+                <span class="green">{{ message }}</span>
+              {% endfor %}
+          </div>
+        </div>
+        {% endif %}
+      {% endwith %}
+      <div class="row">
+        <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xs-12 p-1">
+          <input type="username" name="username_p" placeholder="Username">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xs-12 p-1">
+          <input type="password" name="password_p" placeholder="Password">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xs-12 p-1">
+          <input type="submit" value="Log in">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xs-12 p-1">
+          If not registered, <a class="link" href="/registration">sign up</a>
+        </div>
+      </div>
+    </div>
+  </form>
+
+{% endblock %}

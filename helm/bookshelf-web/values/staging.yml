@@ -1,0 +1,9 @@
+ports:
+  web: 8080
+
+additionalLabels:
+  environment: staging
+
+autoscaling:
+  min: 2
+  max: 4

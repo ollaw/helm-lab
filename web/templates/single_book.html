@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+  {% include 'header.html' %}
+{% endblock %}
+
+{% block body %}
+  {% if action == 'add' %}
+    <div class="container">
+      <form method="post">
+        <div class="row">
+          <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xs-12 pb-3">
+            <label for="title_p" class="form-label">Title:</label>
+            <input type="text" class="form-control" id="title_p" name="title_p" autocomplete="off" maxlength="100">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xs-12 pb-3">
+            <label for="isbn_p" class="form-label">ISBN:</label>
+            <input type="text" class="form-control" id="isbn_p" name="isbn_p" autocomplete="off" maxlength="20">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xs-12 pb-3">
+            <label for="author_p" class="form-label">Author:</label>
+            <input type="text" class="form-control" id="author_p" name="author_p" autocomplete="off" maxlength="20">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xs-12 pb-4">
+            <label for="year_p" class="form-label">Year:</label>
+            <input type="text" class="form-control yearpicker" id="year_p" name="year_p" autocomplete="off" maxlength="20">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Add book!</button>
+      </form>
+    </div>
+  {% else %}
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xs-12 pb-5">
+          <h3>{{ book["title"] }}</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xs-12">
+          ISBN: {{ book["isbn"] }}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xs-12">
+          Author: {{ book["author"] }}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xs-12">
+          Year: {{ book["year"] }}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}

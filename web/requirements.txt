@@ -1,0 +1,13 @@
+click
+Flask
+Flask-Cors
+Flask-Session
+gunicorn
+itsdangerous
+Jinja2
+MarkupSafe
+six
+Werkzeug
+requests
+flasgger
+redis

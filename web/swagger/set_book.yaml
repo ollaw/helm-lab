@@ -1,0 +1,24 @@
+---
+tags:
+- Books APIs
+description: Add a new book with details in your library
+parameters:
+- name: book_isbn
+  in: path
+  description: ISBN Book Code
+  example:
+    book_isbn: "9780988262591"
+- name: payload
+  in: body
+  description: Payload
+  example:
+    title: The Phoenix Project
+    author: Gene Kim
+    year: "2013"
+produces:
+- application/json
+responses:
+  '201':
+    description: Book added to library
+  '500':
+    description: Server error

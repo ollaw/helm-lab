@@ -1,0 +1,5 @@
+ports:
+  web: 8080
+
+additionalLabels:
+  environment: dev

@@ -1,0 +1,19 @@
+---
+tags:
+- Books APIs
+description: Get book details for a book in your library
+parameters:
+- name: book_isbn
+  in: path
+  description: ISBN Book Code
+  example:
+    book_isbn: 12345678
+produces:
+- application/json
+responses:
+  '200':
+    description: OK
+  '404':
+    description: Resource not found
+  '500':
+    description: Server error

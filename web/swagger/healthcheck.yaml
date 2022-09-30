@@ -1,0 +1,11 @@
+---
+tags:
+- Utils
+description: Get a liveness healthcheck from the Application
+responses:
+  '200':
+    description: OK
+  '404':
+    description: Resource not found
+  '500':
+    description: Server error
