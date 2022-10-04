@@ -9,7 +9,7 @@ on:
 
 jobs:
   template:
-    runs-on: debian
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: Install Helm
