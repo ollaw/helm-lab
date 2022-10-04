@@ -6,6 +6,9 @@ on:
       environment:
         required: true
         type: string
+      redis-secret:
+        required: true
+        type: string
 
 jobs:
   template:
@@ -16,4 +19,4 @@ jobs:
         run: sudo apt update && sudo apt install -y curl && curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
       - name: template
         working-directory: ./helm/bookshelf-web
-        run: helm template . -f values/values.yaml  -f values/${{ inputs.environment }}.yml
+        run: helm template . -f values/values.yaml  -f values/${{ inputs.environment }}.yml --redissecret=${{ inputs.redis-secret }}

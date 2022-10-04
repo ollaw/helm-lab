@@ -7,7 +7,9 @@ jobs:
     uses: ./.github/workflows/reusable-helm-linting.yml
     with:
       environment: dev
+      redis-secret: test-dev123
   template-staging:
     uses: ./.github/workflows/reusable-helm-linting.yml
     with:
       environment: staging
+      redis-secret: test-staging123
