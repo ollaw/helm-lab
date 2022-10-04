@@ -1,0 +1,13 @@
+name: helm-linting
+
+on: [push]
+
+jobs:
+  template-dev:
+    uses: ./.github/workflows/reusable-helm-linting.yml
+    with:
+      environment: dev
+  template-staging:
+    uses: ./.github/workflows/reusable-helm-linting.yml
+    with:
+      environment: staging
