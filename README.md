@@ -29,3 +29,4 @@
 
 - Define and use some sample commong labels (ex. `test1: val1`, `test2: val2` ...) into `helpers.tpl`
 - Use [autoscaling](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/)  (mix 2 - max 4) on `staging` environment instead of a fixed number of replicas. (Hint: `kubectl autoscale` command with `--dry-run=client -o yaml` flags may be used to generate HPA manifest).
+- Write some tests to test the services deployed (eg. redis or web connection)
