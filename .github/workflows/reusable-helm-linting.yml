@@ -1,0 +1,20 @@
+name: helm-linting
+
+on:
+  workflow_call:
+    inputs:
+      environment:
+        required: true
+        type: string
+
+on: [push]
+jobs:
+  template:
+    runs-on: debian
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Helm
+        run: apt update && apt install curl && curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+      - name: template
+        working-directory: ./helm/bookshelf-web
+        run: helm template . -f values/values.yaml  -f values/${{ inputs.environment }}.yml
