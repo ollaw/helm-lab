@@ -4,10 +4,10 @@ on: [push]
 
 jobs:
   template-dev:
-    uses: .github/workflows/reusable-workflow.yml
+    uses: .github/workflows/reusable-workflow.yml@add-workflow
     with:
       environment: dev
   template-staging:
-    uses: .github/workflows/reusable-workflow.yml
+    uses: .github/workflows/reusable-workflow.yml@add-workflow
     with:
       environment: staging
