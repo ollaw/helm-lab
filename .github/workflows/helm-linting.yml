@@ -1,6 +1,9 @@
 name: helm-linting
 
-on: [push]
+on:
+  push:
+    paths:
+      - 'helm/**'
 
 jobs:
   template-dev:
