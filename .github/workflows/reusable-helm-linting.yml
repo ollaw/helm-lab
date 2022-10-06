@@ -21,5 +21,5 @@ jobs:
       - name: Install Helm
         run: sudo apt update && sudo apt install -y curl && curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
       - name: template
-        working-directory: ${{ .inputs.path }}
+        working-directory: ${{ inputs.path }}
         run: helm template . -f values.yaml  -f values/${{ inputs.environment }}.yml --set redissecret=${{ inputs.redis-secret }}
