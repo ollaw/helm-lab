@@ -6,13 +6,15 @@ on:
       - 'helm/**'
 
 jobs:
-  template-dev:
+  template-charts:
     uses: ./.github/workflows/reusable-helm-linting.yml
+    strategy:
+      matrix:
+        path: [./helm/simple-bookshelf-web, ./helm/simple-bookshelf-web]
+        environment: [dev,staging]
+        redis-secret: [test-staging123]
     with:
-      environment: dev
-      redis-secret: test-dev123
-  template-staging:
-    uses: ./.github/workflows/reusable-helm-linting.yml
-    with:
-      environment: staging
-      redis-secret: test-staging123
+      environment: ${{ matrix.environment }}
+      redis-secret: ${{ matrix.redis-secret }}
+      path: ${{ matrix.path }}
+
