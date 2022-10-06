@@ -1,0 +1,15 @@
+ports:
+  web: 8080
+
+commonLabels:
+  env: dev
+  pippo: pluto
+
+redis:
+  architecture: standalone
+  master:
+    persistence: 
+      enabled: false
+  replica:
+    persistence:
+      enabled: false

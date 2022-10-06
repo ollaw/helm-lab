@@ -1,0 +1,15 @@
+ports:
+  web: 8090
+
+commonLabels:
+  env: staging
+  mario: rossi
+
+redis:
+  architecture: replication
+  master:
+    persistence: 
+      enabled: false
+  replica:
+    persistence:
+      enabled: false
